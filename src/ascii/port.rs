@@ -3,7 +3,6 @@
 pub mod handlers;
 pub mod iter;
 mod options;
-#[cfg(test)]
 mod test;
 
 use crate::backend::{Backend, Serial, UNKNOWN_BACKEND_NAME};

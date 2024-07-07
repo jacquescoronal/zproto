@@ -29,7 +29,7 @@ impl std::fmt::Display for Flag {
 }
 
 #[derive(Debug, Clone, PartialEq)]
-pub(crate) struct ReplyInner {
+pub struct ReplyInner {
 	pub target: Target,
 	pub id: Option<u8>,
 	pub flag: Flag,
@@ -48,7 +48,7 @@ impl Reply {
 	/// The conversion will fail if the packet is the wrong kind or if the packet
 	/// is not the start of a message. The packet does not need to complete the
 	/// message.
-	pub(crate) fn try_from_packet<T>(packet: &packet::Packet<T>) -> Result<Self, &packet::Packet<T>>
+	pub fn try_from_packet<T>(packet: &packet::Packet<T>) -> Result<Self, &packet::Packet<T>>
 	where
 		T: AsRef<[u8]>,
 	{
